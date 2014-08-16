@@ -63,7 +63,11 @@ void draw()
   background(0);
   for (int i = 0; i < killRings.size(); i++) {
     Ring ring = killRings.get(i);
-    ring.draw();
+    if (ring.opacity > 0) {
+      ring.draw();
+    } else {
+      ring = null;
+    }
   }
   for (int i = 0; i < rings.size(); i++) {
     Ring ring = rings.get(i);
